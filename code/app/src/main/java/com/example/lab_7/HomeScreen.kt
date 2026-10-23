@@ -43,5 +43,17 @@ fun HomeScreen(navController: NavController) {
         ) {
             Text("Upcoming Races")
         }
+
+        // Lab Participation Exercise
+        Spacer(modifier = Modifier.height(6.dp))
+
+        Button(
+            onClick = {
+                navController.navigate("drivers")
+            },
+            modifier = Modifier.testTag("driversButton") // for testing
+        ) {
+            Text("Drivers")
+        }
     }
 }

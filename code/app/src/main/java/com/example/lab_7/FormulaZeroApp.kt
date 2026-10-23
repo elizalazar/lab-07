@@ -15,5 +15,7 @@ fun FormulaZeroApp() {
     NavHost(navController = navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
         composable("races") { UpcomingRacesScreen(navController) }
+        // Lab Participation Exercise
+        composable("drivers") { DriversScreen(navController) }
     }
 }

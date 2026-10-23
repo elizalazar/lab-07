@@ -55,6 +55,73 @@ class FormulaZeroTest {
             .onNodeWithText("FormulaZero Home")
             .assertExists()
     }
+
+    // Lab Participation Exercise
+    @Test
+    fun navigate_to_drivers_add_clear_and_return_home() {
+        // navigate to drivers screen
+        composeTestRule
+            .onNodeWithTag("driversButton")
+            .performClick()
+
+        // verify drivers screen
+        composeTestRule
+            .onNodeWithText("FormulaZero Drivers")
+            .assertExists()
+
+        // enter driver 1 name
+        composeTestRule
+            .onNodeWithTag("nameInput")
+            .performTextInput("Sandra")
+
+        // add driver 1
+        composeTestRule
+            .onNodeWithTag("addDriverButton")
+            .performClick()
+
+        // verify driver 1 appears
+        composeTestRule
+            .onNodeWithText("Sandra")
+            .assertExists()
+
+        // enter driver 2 name
+        composeTestRule
+            .onNodeWithTag("nameInput")
+            .performTextInput("Theona")
+
+        // add driver 2
+        composeTestRule
+            .onNodeWithTag("addDriverButton")
+            .performClick()
+
+        // verify driver 2 appears
+        composeTestRule
+            .onNodeWithText("Theona")
+            .assertExists()
+
+        // clear drivers
+        composeTestRule
+            .onNodeWithTag("clearDriverButton")
+            .performClick()
+
+        // verify drivers are cleared
+        composeTestRule
+            .onNodeWithText("Sandra")
+            .assertDoesNotExist()
+        composeTestRule
+            .onNodeWithText("Theona")
+            .assertDoesNotExist()
+
+        // return to home screen
+        composeTestRule
+            .onNodeWithTag("backButton")
+            .performClick()
+
+        // verify return to home screen
+        composeTestRule
+            .onNodeWithText("FormulaZero Home")
+            .assertExists()
+    }
 }
 
 
